@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>ex_1.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #0000ff;}
+.s3 { color: #808080; font-style: italic;}
+.s4 { color: #008080; font-weight: bold;}
+.ls0 { height: 1px; border-width: 0; color: #c0c0c0; background-color:#c0c0c0}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ex_1.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span>numpy <span class="s0">as </span>np
+<span class="s0">import </span>matplotlib.pyplot <span class="s0">as </span>plt
+
+golden_ratio_global = (np.sqrt(<span class="s2">5</span>) - <span class="s2">1</span>) / <span class="s2">2</span>
+
+
+<span class="s0">def </span>backward_recursive_power(n, initial_guess, df_type):
+    <span class="s3"># Initial empty list:</span>
+    steps = np.empty(n+<span class="s2">2</span>, dtype=df_type)
+    steps[-<span class="s2">2</span>] = initial_guess
+    steps[-<span class="s2">1</span>] = initial_guess * golden_ratio_global
+
+    <span class="s3"># Iterate backwards using formula:</span>
+    <span class="s0">for </span>i <span class="s0">in </span>range(np.size(steps) - <span class="s2">3</span>, -<span class="s2">1</span>, -<span class="s2">1</span>):
+        steps[i] = steps[i+<span class="s2">1</span>] + steps[i+<span class="s2">2</span>]
+
+    <span class="s3"># Normalize and return:</span>
+    <span class="s0">return </span>initial_guess / steps[<span class="s2">0</span>]
+
+
+<span class="s0">def </span>golden_powers_down(n, df_type):
+    <span class="s3"># Initialize initial variables:</span>
+    data = np.empty((n, <span class="s2">3</span>), dtype=df_type)
+    data[<span class="s2">0</span>] = (<span class="s2">1</span>,<span class="s2">1</span>,<span class="s2">1</span>)
+
+    <span class="s3"># Generate data:</span>
+    <span class="s0">for </span>i <span class="s0">in </span>range(<span class="s2">1</span>, n):
+        <span class="s3"># Generate directly calculated value:</span>
+        direct_value = data[i - <span class="s2">1</span>, <span class="s2">0</span>] * golden_ratio_global
+        <span class="s3"># Generate recursive value using the algorithm:</span>
+        recursive_value = backward_recursive_power(i, <span class="s2">1</span>, df_type)
+        <span class="s3"># Put all in one record of the table:</span>
+        data[i] = (recursive_value, direct_value, recursive_value - direct_value)
+
+    <span class="s0">return </span>data
+
+
+a = golden_powers_down(<span class="s2">31</span>, <span class="s4">'float32'</span>)
+
+goldown = golden_powers_down(<span class="s2">31</span>,<span class="s4">'float32'</span>)
+plt.plot(range(<span class="s2">2</span>,<span class="s2">25</span>),np.log10(abs(goldown[<span class="s2">2</span>:<span class="s2">25</span>,<span class="s2">2</span>])))
+plt.title(<span class="s4">'stab_down'</span>,fontsize=<span class="s2">16</span>)
+plt.xlabel(<span class="s4">'n'</span>,fontsize=<span class="s2">14</span>)
+plt.ylabel(<span class="s4">'log-abs-error'</span>,fontsize=<span class="s2">14</span>)
+plt.show()<hr class="ls0"><span class="s3"># %%</span>
+plt.plot(range(<span class="s2">2</span>,<span class="s2">19</span>),goldown[<span class="s2">2</span>:<span class="s2">19</span>,<span class="s2">2</span>])
+plt.title(<span class="s4">'stab_down'</span>,fontsize=<span class="s2">16</span>)
+plt.xlabel(<span class="s4">'n'</span>,fontsize=<span class="s2">14</span>)
+plt.ylabel(<span class="s4">'error'</span>,fontsize=<span class="s2">14</span>)
+plt.show()</pre>
+</body>
+</html>

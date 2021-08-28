@@ -1,0 +1,147 @@
+# Question 1
+
+
+## (a)
+
+
+In the turning point:  
+$$\varepsilon_{n}=v\left(x_{\text{in}}\right)=v\left(x_{\text{out}}\right)$$
+Substituting  $v\left(x\right)$:  
+$$\frac{4}{x^{12}}-\frac{4}{x^{6}}=\varepsilon_{n}$$
+
+
+
+Multiply by  $x^{12}$: 
+$$4-4x^{6}=\varepsilon_{n}x^{12}$$
+Moving all terms to the left-hand-side: 
+$$\varepsilon_{n}x^{12}+4x^{6}-4=0$$
+Using the quadratic formula: 
+$$x_{\text{in,out}}^{6}=\frac{-4\pm\sqrt{16+16\varepsilon_{n}}}{2\varepsilon_{n}}=2\frac{-1\pm\sqrt{1+\varepsilon_{n}}}{\varepsilon_{n}}$$
+Taking the sixth root of both sides: 
+$$x_{\text{in,out}}=\sqrt[6]{2\frac{-1\pm\sqrt{1+\varepsilon_{n}}}{\varepsilon_{n}}}$$
+
+
+
+## (b)
+
+
+Finding minimum point: 
+$$\frac{d}{dx}\left(v\left(x\right)\right)=0$$
+ 
+$$\frac{d}{dx}\left(4\left(\frac{1}{x^{12}}-\frac{1}{x^{6}}\right)\right)=0$$
+Differentiating and removing the  $4$ factor: 
+$$-12\frac{1}{x^{13}}+6\frac{1}{x^{7}}=0$$
+Multiply by  $x^{13}$: 
+$$-12+6x^{6}=0$$
+adding  $+12$: 
+$$6x^{6}=12$$
+ 
+$$x^{6}=2$$
+ 
+$$x_{\min}=\sqrt[6]{2}$$
+
+
+
+Evaluating  $v\left(x\right)$ at  $x=x_{\min}$: 
+$$v\left(x_{\min}\right)=4\left(\frac{1}{2^{\frac{12}{6}}}-\frac{1}{2^{\frac{6}{6}}}\right)=4\cdot\left(\frac{1}{4}-\frac{1}{2}\right)=-1$$
+
+
+
+The second derivative of  $v\left(x\right)$: 
+$$\frac{d^{2}v}{dx^{2}}=\frac{d}{dx}\left(-12\frac{4}{x^{13}}+6\frac{4}{x^{7}}\right)=\frac{624}{x^{14}}-\frac{168}{x^{8}}$$
+Evaluating at  $x=x_{\min}:$ 
+$$\left.\frac{d^{2}v}{dx^{2}}\right|_{x=x\min}=\frac{624}{2^{\frac{14}{6}}}-\frac{168}{2^{\frac{8}{6}}}=\sqrt{}\frac{156}{2^{\frac{1}{3}}}-\frac{84}{2^{\frac{1}{3}}}=\frac{72}{\sqrt[3]{2}}$$
+
+
+
+And therefore quadratic approximation would be: 
+$$\tilde{v}\left(x\right)=v\left(x_{\min}\right)+\frac{1}{2}\left.\frac{d^{2}v}{dx^{2}}\right|_{x=x\min}\left(x-x_{\min}\right)^{2}$$
+substituting  $x_{\min}$ and  $v\left(x_{\min}\right)=1$: 
+$$\tilde{v}\left(x\right)=-1+\frac{36}{\sqrt[3]{2}}\left(x-2^{\frac{1}{6}}\right)^{2}$$
+Equating to a constant energy
+
+
+$$-1+\frac{36}{\sqrt[3]{2}}\left(x-2^{\frac{1}{6}}\right)^{2}=E$$
+Isolate  $x$: 
+$$\left(x-2^{\frac{1}{6}}\right)^{2}=\frac{\sqrt[3]{2}}{36}\left(E+1\right)$$
+ 
+$$x-2^{\frac{1}{6}}=\pm\sqrt{\frac{\sqrt[3]{2}}{36}\left(E+1\right)}$$
+ 
+$$x_{\min,\max}=\pm\sqrt{\frac{\sqrt[3]{2}}{36}\left(E+1\right)}+2^{\frac{1}{6}}$$
+
+
+
+# Question 2
+
+
+## (a)
+
+
+$$\left(x-10\right)\left(x-1\right)\left(x-6\right)=\left(x-10\right)\left(x^{2}-7x+6\right)=x^{3}-7x^{2}+6x-10x^{2}+70x-60=$$
+ 
+$$\]
+
+
+
+## (b)
+
+
+## (c)
+
+
+$$\intop_{-\sqrt{E_{n}}}^{\sqrt{E_{n}}}\sqrt{E_{n}-x^{2}}dx=\left(n+\frac{1}{2}\right)$$
+ 
+$$s\left(E_{n}\right)=\intop_{-\sqrt{E_{n}}}^{\sqrt{E_{n}}}\sqrt{E_{n}-x^{2}}dx=\frac{1}{2}\pi E_{n}$$
+
+
+
+# Question 3
+
+
+## (a)
+
+
+$$\]
+
+
+
+## (b)
+
+
+## (c)
+
+
+# Question 4
+
+
+## (a)
+
+
+## (b)
+
+
+## (c)
+
+
+# Question 5
+
+
+## (a)
+
+
+## (b)
+
+
+## (c)
+
+
+# Question 6
+
+
+## (a)
+
+
+## (b)
+
+
+## (c)
